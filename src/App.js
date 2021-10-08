@@ -20,18 +20,19 @@ function App() {
 
   },[])
 
-  /*useInterval(async () => {
+
+
+  useInterval(async () => {
     const randomMessage = await axios.post('http://localhost:8080/api/ping_message')
     console.log(randomMessage.data)
-    updateMessages(randomMessage.data)
-  },1000)*/
+    setMessages(oldArray => [...messages, randomMessage.data]);
+  },1000)
 
 
 
   return (
     <div className="App">
       {messages.map((message) => {
-        debugger
         return (<ChetBox {...message}/>)
       })}
     </div>
