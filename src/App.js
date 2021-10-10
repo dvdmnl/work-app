@@ -8,7 +8,7 @@ import ChetBox from "./components/ChetBox/ChetBox";
 function App() {
   const [messages, setMessages] = useState([])
 
-  useEffect( () => {
+/*  useEffect( () => {
 
     async function fetchData() {
       const randomMessage = await axios.post('http://localhost:8080/api/ping_message')
@@ -18,14 +18,14 @@ function App() {
 
     fetchData()
 
-  },[])
+  },[])*/
 
 
 
   useInterval(async () => {
     const randomMessage = await axios.post('http://localhost:8080/api/ping_message')
     console.log(randomMessage.data)
-    setMessages(oldArray => [...messages, randomMessage.data]);
+    setMessages(() => [...messages, randomMessage.data].reverse());
   },1000)
 
 

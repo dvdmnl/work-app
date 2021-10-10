@@ -1,9 +1,10 @@
 .chatBox {
-    background: rgba(255, 255, 255, 0.2);
+    background-color: #ffd400;
     padding: 1em 0;
     height: auto;
     width: 65%;
-    border-radius: 5px;
-    margin: 2em 1em;
+    border-radius: 100px;
+    margin: 20px auto;
     overflow: auto;
+    border: 3px solid;
 }
